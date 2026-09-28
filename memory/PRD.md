@@ -19,8 +19,9 @@ Design a website for Chople (product: Chople's Desk) — research & data analysi
 - Platform: interactive product replica (Research/Trends/Notes/Live Sources, depth modes, add-to-notes w/ citations), Notes showcase, Trends showcase, real screenshots with clip reveal, time section, CTA
 - Tested: iteration_1 — backend 12/12, frontend all flows passed
 
+- Iteration 2: official Chople logo recreated as crisp SVG (nav, footer, app mock, favicon); top wordmark "Chople Desk / Desk by Chople"; "Trusted by users from" running logo carousel (Hindustan Times, India Today, NDTV, Republic World; self-hosted in /public/logos from Wikimedia); sources marquee moved below Problems
+
 ## Backlog
-- P1: Replace SVG mark with the official logo file once uploaded
 - P1: Admin view to see waitlist/enterprise submissions
 - P2: Testimonials / newsroom logos, case-study page, blog/insights
 - P2: Confirmation email to submitter

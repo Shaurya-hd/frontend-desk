@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { toast } from "sonner";
 import { Search, TrendingUp, NotebookPen, Database, ChevronDown, PlusCircle, FileText, Pin, Table2, PanelsTopLeft, Send, Plus } from "lucide-react";
+import { LogoMark } from "@/components/site/Logo";
 import { useLeads } from "@/components/site/LeadProvider";
 import { ResearchView, TrendsView, NotesView, SourcesView } from "./AppViews";
 import { DEPTHS, LIVE_SOURCES } from "@/data/platform";
@@ -39,7 +40,7 @@ export const AppMock = () => {
       <div className="grid h-[760px] md:grid-cols-[260px_1fr]">
         <aside className="hidden flex-col border-r border-rule bg-white md:flex">
           <div className="flex items-center gap-2.5 border-b border-rule px-5 py-4">
-            <svg viewBox="0 0 32 32" className="h-7 w-7"><rect width="32" height="32" rx="7" fill="#0F0F0F" /><path d="M23.6 10.2A9.2 9.2 0 1 0 23.6 21.8" fill="none" stroke="#FBFBF9" strokeWidth="5.2" /></svg>
+            <LogoMark className="h-7 w-7" />
             <div className="leading-none"><div className="text-[15px] font-medium">Desk</div><div className="mt-0.5 font-mono text-[9px] tracking-[0.2em] text-[#8A8A80]">BY CHOPLE</div></div>
           </div>
           <div className="space-y-1 p-2.5">

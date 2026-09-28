@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";
 import { Hero } from "@/components/home/Hero";
 import { Marquee } from "@/components/home/Marquee";
+import { TrustedBy } from "@/components/home/TrustedBy";
 import { Problems } from "@/components/home/Problems";
 import { FeaturesIntro } from "@/components/home/FeaturesIntro";
 import { FeatureResearch } from "@/components/home/FeatureResearch";
@@ -26,8 +27,9 @@ export default function Home() {
   return (
     <div data-testid="home-page">
       <Hero />
-      <Marquee />
+      <TrustedBy />
       <Problems />
+      <Marquee />
       <FeaturesIntro />
       <FeatureResearch />
       <FeatureVisual />
