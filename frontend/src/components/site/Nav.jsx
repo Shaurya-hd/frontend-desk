@@ -63,7 +63,7 @@ export const Nav = () => {
                 data-testid="nav-individual-hint"
               >
                 <span className="mt-5 whitespace-nowrap font-hand text-[22px] font-semibold leading-none text-signal">An individual</span>
-                <svg viewBox="0 0 40 40" className="h-9 w-9 text-signal" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 34 C 10 18, 20 10, 30 6" /><path d="M22 4 L 31 5.5 L 28 14" /></svg>
+                <svg viewBox="0 0 40 40" className="h-9 w-9 -scale-x-100 text-signal" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 34 C 10 18, 20 10, 30 6" /><path d="M22 4 L 31 5.5 L 28 14" /></svg>
               </motion.div>
             </div>
             <button onClick={() => setOpen((o) => !o)} className="flex h-10 w-10 items-center justify-center border border-rule xl:hidden" data-testid="nav-mobile-menu-button" aria-label="Menu">
