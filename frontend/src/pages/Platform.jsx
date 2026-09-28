@@ -3,7 +3,6 @@ import { MousePointerClick } from "lucide-react";
 import { Eyebrow, MaskLines, EASE } from "@/components/site/Reveal";
 import { AppMock } from "@/components/platform/AppMock";
 import { NotesShowcase } from "@/components/platform/NotesShowcase";
-import { PlatformScreens } from "@/components/platform/PlatformScreens";
 import { TrendsShowcase } from "@/components/platform/TrendsShowcase";
 import { TimeSaved } from "@/components/home/TimeSaved";
 import { CtaSection } from "@/components/home/CtaSection";
@@ -31,7 +30,6 @@ export default function Platform() {
       </section>
       <NotesShowcase />
       <TrendsShowcase />
-      <PlatformScreens />
       <TimeSaved />
       <CtaSection id="platform-join" />
     </div>
