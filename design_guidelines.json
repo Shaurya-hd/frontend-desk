@@ -1,0 +1,99 @@
+{
+  "theme": "Light editorial theme (newsroom/paper feel) with dark accent sections",
+  "archetype": "Swiss Brutalist & Old Money Tech Hybrid",
+  "typography": {
+    "headings": {
+      "family": "'Cormorant Garamond', serif",
+      "weights": ["400", "600", "700"],
+      "usage": "Used for all primary headings, creating a high-end editorial newsroom feel. Very stylish, professional, anti-AI generative look."
+    },
+    "body": {
+      "family": "'IBM Plex Sans', sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "For readable body text, paragraphs, and general UI."
+    },
+    "mono_data": {
+      "family": "'JetBrains Mono', monospace",
+      "weights": ["400"],
+      "usage": "For data labels, tags, charts, numerical values, and 'technical' micro-copy."
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FBFBF9",
+      "secondary": "#F0F0EB",
+      "dark_accent": "#0A0A0A"
+    },
+    "text": {
+      "primary": "#0F0F0F",
+      "secondary": "#4A4A4A",
+      "inverse": "#FBFBF9"
+    },
+    "brand_accents": {
+      "blue_ui": "#3B82F6",
+      "indigo_ui": "#4F46E5",
+      "success_tick": "#10B981"
+    }
+  },
+  "visual_enhancers": {
+    "texture": "Subtle CSS noise overlay (grain) on light backgrounds to simulate a physical paper/print feel. Ensure it is very low opacity (2-3%).",
+    "borders": "1px solid #D1D1C7 for structural grids, bento layouts, and tables. 'Border-collapse' style for technical sections.",
+    "shadows": "Sharp, hard drop shadows (e.g., 4px 4px 0px #0F0F0F) or completely flat with borders. No generic soft, floaty shadows.",
+    "corners": "Sharp edges (rounded-none) or very subtle (rounded-sm) to maintain the editorial print vibe."
+  },
+  "components_needed": [
+    "lucide-react (Icons: ArrowRight, Check, LineChart, BarChart, PieChart, Sparkles, X, etc.)",
+    "recharts (For interactive Line/Bar/Pie chart switcher)",
+    "framer-motion (For kinetic hero reveal, scroll animations, bento grid reveals)",
+    "@studio-freight/react-lenis (For smooth scrolling momentum)",
+    "Shadcn UI (Dialog/Modal for Enterprise Sales, Input, Button, Form, Tabs for chart switcher)"
+  ],
+  "image_urls": {
+    "editorial_vibe": {
+      "url": "https://images.unsplash.com/photo-1613743575064-a645fae50d2e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxuZXdzcGFwZXIlMjByZWFkaW5nfGVufDB8fHx8MTc5MDYyMDI5MXww&ixlib=rb-4.1.0&q=85",
+      "description": "Person reading newspaper (Editorial luxury mood, use in background or atmospheric sections with low opacity)"
+    },
+    "data_abstract": {
+      "url": "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhdGElMjB2aXN1YWxpemF0aW9uJTIwbmV0d29ya3xlbnwwfHx8fDE3OTA2MjAyODJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Blue background with lines and dots (Connections / Data visualisation background context)"
+    },
+    "product_ui_1": {
+      "url": "https://customer-assets-0z36b82j.emergentagent.net/job_c2a08c72-c761-4cab-b1c1-73ef8ad622bd/artifacts/jcbrdzz0_image.webp",
+      "description": "Chople product screenshot 1 - to be used in the Platform page or Hero mockup"
+    },
+    "product_ui_2": {
+      "url": "https://customer-assets-0z36b82j.emergentagent.net/job_c2a08c72-c761-4cab-b1c1-73ef8ad622bd/artifacts/jevb52vr_image.webp",
+      "description": "Chople product screenshot 2 - to be used in the Platform page"
+    }
+  },
+  "layouts_and_grids": {
+    "hero": "Awwwards-level kinetic text. Massive serif typography for the headline. Line-by-line masked reveal on load using Framer Motion. Include an interactive 'Sample Query Demo' search bar. Logo is a bold black 'C'.",
+    "marquee": "Slow editorial marquee showing trusted sources or problem statements, separated by small dots or crosses.",
+    "problems_section": "Bento Grid (Mode A 'Tetris'). Show the 5 newsroom problems with stats. Use a dark accent background (#0A0A0A) with white text to create visual tension and contrast.",
+    "features": {
+      "f1_deep_research": "Split layout. Left: Sticky text describing research & verification. Right: Scrolling list of sources tracing claims.",
+      "f2_visualisation": "Interactive container with Recharts. Add UI toggles for 'View: Line/Bar/Pie', 'Values: Absolute', 'Order', 'Zero Baseline', 'Copy Data', 'Export'. Highlight 'Anomalies detected' visually.",
+      "f3_connections": "Grid or abstract visual showing dots connecting events, people, organizations. Emphasize discovering the bigger story."
+    },
+    "comparison": "Side-by-side demo. Left: ChatGPT/Claude giving 'essay-style' responses. Right: Chople instantly formatting as an interactive Rechart. Below this: 8-10 row difference table with checkmarks for Chople.",
+    "platform_page": "A dedicated section (or second page route) mimicking the actual product UI interactively. Highlight '1-click notes with citations', '10 min vs 2 hours' research time, and 'Trends' connecting news feeds.",
+    "footer": "Massive typography. 'Contact Enterprise Sales' form (opens in Dialog). 'Join Waitlist' input form. Links to Twitter and LinkedIn."
+  },
+  "motion_and_interactions": {
+    "scroll": "Lenis smooth scrolling is MANDATORY for a premium momentum feel.",
+    "reveals": "Framer motion scroll reveals for bento cards and feature images (fade in and translate up).",
+    "micro_interactions": "Buttons have a sharp 1px border that fills with black on hover (inverse text). Chart toggles click instantly with small scale-down effect.",
+    "parallax": "Include one subtle parallax moment on the platform UI screenshots to give them depth on scroll."
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: framer-motion, @studio-freight/react-lenis, recharts, lucide-react.",
+    "Import Google Fonts: 'Cormorant Garamond', 'IBM Plex Sans', and 'JetBrains Mono'. Apply them precisely to headings, body, and data elements.",
+    "Create a clean editorial aesthetic. Absolutely NO generic SaaS gradients, soft blurry shadows, or generic 'Inter' font for headings.",
+    "Ensure all interactive Recharts look like financial/editorial data (use sharp lines, no curved smoothing, precise mono fonts for axes).",
+    "Build the Comparison table to look like a high-end newspaper financial section table (thin borders, crisp typography, generous padding).",
+    "Add 'data-testid' attributes to all interactive elements, buttons, and form inputs for robust testing.",
+    "Do not center-align body text; keep paragraphs left-aligned to preserve the reading flow of a newsroom aesthetic.",
+    "Implement the Platform UI mimicking section meticulously, utilizing the provided product screenshots to show authentic UI features."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": "Prioritize optical alignment, generous padding (p-8 to p-16 in sections), layered z-index depth, and glass-morphism sparingly only where needed. Avoid standard centered layouts. Inject subtle noise texture via CSS to give it a physical print feel. Do not use transparent backgrounds under text where readability is compromised."
+}
