@@ -93,7 +93,7 @@ export const FormatVersus = () => {
     <section id="compare" className="mx-auto max-w-[1440px] px-5 py-24 lg:px-10 lg:py-32" data-testid="format-versus">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-8">
-          <Eyebrow>Answers in the right shape</Eyebrow>
+          <Eyebrow>How is Chople different from other tools</Eyebrow>
           <h2 className="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-[5rem]">
             <MaskLines inView lines={["Chatbots write essays.", <>Chople answers the way <em key="e" className="italic text-signal">journalists read.</em></>]} />
           </h2>
@@ -113,9 +113,9 @@ export const FormatVersus = () => {
 
       <div className="mt-6 grid gap-px border border-ink bg-ink lg:grid-cols-2">
         <div className="flex flex-col bg-paper-2 p-6 lg:p-8" data-testid="versus-chatbot-panel">
-          <div className="flex items-center justify-between">
-            <span className="flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-[#6B6B63]"><MessageSquareText className="h-3.5 w-3.5" /> General chatbots · ChatGPT, Claude</span>
-            <span className="font-mono text-[10px] text-[#8A8A80]">Essay format</span>
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="flex items-center gap-2.5 text-[22px] font-semibold tracking-[-0.02em] text-[#3A3A3A]" data-testid="versus-chatbot-heading"><MessageSquareText className="h-5 w-5" /> Other AI Tools Response</h3>
+            <span className="font-mono text-[10.5px] text-[#8A8A80]">ChatGPT, Claude · Essay format</span>
           </div>
           <p className="mt-6 min-h-[280px] flex-1 font-display text-[19px] leading-[1.55] text-[#4A4A4A]">{essay}<span className="caret" /></p>
           <div className="mt-6 grid grid-cols-3 gap-px border border-rule bg-rule font-mono text-[10.5px]">
@@ -126,7 +126,7 @@ export const FormatVersus = () => {
         </div>
         <div className="flex flex-col bg-white p-6 lg:p-8" data-testid="versus-chople-panel">
           <div className="flex items-center justify-between">
-            <span className="flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-ink"><Sparkles className="h-3.5 w-3.5 text-signal" /> Chople's Desk</span>
+            <h3 className="flex items-center gap-2.5 text-[22px] font-semibold tracking-[-0.02em] text-ink" data-testid="versus-chople-heading"><Sparkles className="h-5 w-5 text-signal" /> Chople's Desk Response</h3>
             <span className="bg-ink px-2 py-1 font-mono text-[10px] text-paper" data-testid="versus-detected">{cur.detected}</span>
           </div>
           <div className="mt-6 min-h-[280px] flex-1">

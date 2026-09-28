@@ -1,4 +1,4 @@
-import { Search, ShieldCheck, Layers, Archive, Cpu, ArrowRight } from "lucide-react";
+import { Search, ShieldCheck, Layers, Archive, Cpu } from "lucide-react";
 import { Eyebrow, FadeUp, MaskLines } from "@/components/site/Reveal";
 
 const PROBLEMS = [
@@ -26,8 +26,8 @@ export const Problems = () => (
       </div>
 
       <div className="border-t border-ink lg:col-span-7">
-        {PROBLEMS.map(({ Icon, title, text, fix }, i) => (
-          <FadeUp key={title} delay={i * 0.06} className="group grid grid-cols-[auto_1fr] gap-5 border-b border-rule py-7 transition-colors duration-300 hover:bg-paper sm:grid-cols-[auto_1fr_auto] sm:px-4" data-testid={`problem-card-${i + 1}`}>
+        {PROBLEMS.map(({ Icon, title, text }, i) => (
+          <FadeUp key={title} delay={i * 0.06} className="group grid grid-cols-[auto_1fr] gap-5 border-b border-rule py-7 transition-colors duration-300 hover:bg-paper sm:px-4" data-testid={`problem-card-${i + 1}`}>
             <div className="flex items-start gap-4">
               <span className="pt-1 font-mono text-[11px] text-[#8A8A80]">0{i + 1}</span>
               <span className="flex h-10 w-10 items-center justify-center border border-ink bg-paper transition-colors duration-300 group-hover:bg-ink group-hover:text-paper"><Icon className="h-4 w-4" /></span>
@@ -35,9 +35,6 @@ export const Problems = () => (
             <div>
               <h3 className="font-display text-[26px] font-medium leading-[1.1] tracking-tight lg:text-[30px]">{title}</h3>
               <p className="mt-2 max-w-lg text-[15px] leading-relaxed text-[#4A4A4A]">{text}</p>
-            </div>
-            <div className="col-span-2 flex items-center gap-2 self-center font-mono text-[10.5px] uppercase tracking-[0.14em] text-signal sm:col-span-1">
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" /> {fix}
             </div>
           </FadeUp>
         ))}

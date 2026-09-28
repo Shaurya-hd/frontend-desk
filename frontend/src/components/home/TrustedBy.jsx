@@ -8,11 +8,11 @@ const LOGOS = [
 ];
 
 export const TrustedBy = () => (
-  <section className="border-t border-rule bg-paper py-12" data-testid="trusted-by">
-    <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-5 lg:grid-cols-[260px_1fr] lg:px-10">
+  <section className="border-b border-rule py-6" data-testid="trusted-by">
+    <div className="grid items-center gap-6 lg:grid-cols-[240px_1fr]">
       <FadeUp>
         <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-[#6B6B63]">Trusted by users from</p>
-        <p className="mt-2 font-display text-2xl leading-tight">India's leading newsrooms</p>
+        <p className="mt-1 font-display text-2xl leading-tight">India's leading newsrooms</p>
       </FadeUp>
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-paper to-transparent" />

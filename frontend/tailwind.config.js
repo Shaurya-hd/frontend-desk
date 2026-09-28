@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         display: ["'Newsreader'", "Georgia", "serif"],
         sans: ["'IBM Plex Sans'", "system-ui", "sans-serif"],
+        hand: ["'Caveat'", "cursive"],
         mono: ["'JetBrains Mono'", "ui-monospace", "monospace"]
       },
       borderRadius: {

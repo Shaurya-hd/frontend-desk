@@ -1,8 +1,8 @@
 export const NODE_TYPES = {
-  event: { label: "Event", color: "#FBFBF9" },
+  event: { label: "Event", color: "#0F0F0F" },
   policy: { label: "Policy", color: "#2F5CF0" },
   data: { label: "Data", color: "#7C98FF" },
-  org: { label: "Organisation", color: "#C9C3B3" },
+  org: { label: "Organisation", color: "#8C8C82" },
   people: { label: "People", color: "#D6392B" },
 };
 

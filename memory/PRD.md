@@ -20,6 +20,7 @@ Design a website for Chople (product: Chople's Desk) — research & data analysi
 - Tested: iteration_1 — backend 12/12, frontend all flows passed
 
 - Iteration 2: official Chople logo recreated as crisp SVG (nav, footer, app mock, favicon); top wordmark "Chople Desk / Desk by Chople"; "Trusted by users from" running logo carousel (Hindustan Times, India Today, NDTV, Republic World; self-hosted in /public/logos from Wikimedia); sources marquee moved below Problems
+- Iteration 3 (visual edits): Newsreader display font + Caveat hand-annotations; "Chople" wordmark only; nav → Problem / Features / How it is different from other tools / Tools (+ floating "An individual" hint on Join waitlist); hero "Built for journalists & media houses" handwritten highlight with curved arrow; stat 2M+; Trusted-by strip moved into hero; Problems simplified (light list); Connections section light; FormatVersus panel headings; PlatformTeaser (home) & PlatformScreens (platform) removed; sources marquee titled "Live official sources"
 
 ## Backlog
 - P1: Admin view to see waitlist/enterprise submissions

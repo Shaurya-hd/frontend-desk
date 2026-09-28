@@ -26,9 +26,6 @@ export const LogoMark = ({ className = "h-8 w-8", dark = false }) => {
 export const Logo = ({ dark = false, testId = "nav-logo-link" }) => (
   <Link to="/" data-testid={testId} className="group flex items-center gap-2.5">
     <LogoMark dark={dark} className="h-8 w-8 transition-transform duration-700 group-hover:rotate-[-24deg]" />
-    <span className="leading-none">
-      <span className={`block font-display text-[23px] font-semibold tracking-tight ${dark ? "text-paper" : "text-ink"}`}>Chople Desk</span>
-      <span className={`block font-mono text-[9px] uppercase tracking-[0.24em] ${dark ? "text-white/55" : "text-[#6B6B63]"}`}>Desk by Chople</span>
-    </span>
+    <span className={`font-sans text-[24px] font-semibold leading-none tracking-[-0.03em] ${dark ? "text-paper" : "text-ink"}`}>Chople</span>
   </Link>
 );

@@ -36,7 +36,7 @@ export const FeaturesIntro = () => {
       <div className="max-w-4xl">
         <Eyebrow>What Chople Desk does</Eyebrow>
         <h2 className="mt-6 font-display text-5xl font-medium leading-[1] tracking-[-0.025em] sm:text-6xl lg:text-[4.6rem]">
-          <MaskLines inView lines={["Three tools. One research desk.", <em key="e" className="italic text-signal">Built for journalists.</em>]} />
+          <MaskLines inView lines={["Three features. One research desk.", <em key="e" className="italic text-signal">Built for journalists.</em>]} />
         </h2>
         <FadeUp delay={0.1}>
           <p className="mt-6 max-w-2xl text-[18px] leading-relaxed text-[#3A3A3A]">Chople Desk does the searching, checking and charting — so reporters spend their time on the story, not the legwork.</p>
