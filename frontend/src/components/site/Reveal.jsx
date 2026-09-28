@@ -37,8 +37,8 @@ export const FadeUp = ({ children, delay = 0, className = "", y = 28, ...rest })
 );
 
 export const Eyebrow = ({ children, dark = false, className = "" }) => (
-  <div className={`flex items-center gap-3 text-[16px] font-medium tracking-[-0.01em] lg:text-[17px] ${dark ? "text-paper/85" : "text-ink"} ${className}`}>
-    <span className="h-2.5 w-2.5 bg-signal" />
+  <div className={`flex items-center gap-3.5 text-[22px] font-semibold tracking-[-0.02em] lg:text-[28px] ${dark ? "text-paper/85" : "text-ink"} ${className}`}>
+    <span className="h-3.5 w-3.5 shrink-0 bg-signal" />
     {children}
   </div>
 );

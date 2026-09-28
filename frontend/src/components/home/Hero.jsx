@@ -26,27 +26,14 @@ export const Hero = () => {
     <section className="relative overflow-hidden pt-32 lg:pt-36" data-testid="hero-section">
       <div className="dot-grid pointer-events-none absolute inset-x-0 top-0 h-[80vh] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
       <div className="relative mx-auto max-w-[1440px] px-5 lg:px-10">
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.3, duration: 1, ease: EASE }} className="relative flex justify-end" data-testid="hero-built-for">
-          <div className="relative mr-2 lg:mr-24">
-            <span className="relative inline-block -rotate-2 font-hand text-[34px] font-bold leading-none text-signal sm:text-[44px]">
-              <span className="absolute -inset-x-2 bottom-1 top-1/2 -z-10 -skew-x-6 bg-[#DCE4FF]" />
-              Built for journalists &amp; media houses
-            </span>
-            <svg viewBox="0 0 120 110" className="absolute -bottom-24 right-6 hidden h-24 w-28 text-signal lg:block" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
-              <motion.path d="M100 6 C 118 40, 90 80, 40 96" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1.8, duration: 1 }} />
-              <motion.path d="M52 84 L 38 97 L 55 104" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 2.6, duration: 0.4 }} />
-            </svg>
-          </div>
-        </motion.div>
-
-        <div className="mt-6 grid gap-10 lg:mt-4 lg:grid-cols-12 lg:gap-8">
-          <h1 className="font-display text-[3.4rem] font-medium leading-[0.9] tracking-[-0.035em] text-ink sm:text-[5.5rem] lg:col-span-8 lg:text-[8.6rem]" data-testid="hero-headline">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <h1 className="font-display text-[3.4rem] font-medium leading-[0.9] tracking-[-0.035em] text-ink sm:text-[5rem] lg:col-span-8 lg:text-[6.6rem]" data-testid="hero-headline">
             <MaskLines
               delay={0.35}
               lines={[
-                "Every dataset",
-                <>hides a <em className="font-normal italic text-signal">story.</em></>,
-                "Find it first.",
+                <>Find <em className="font-normal italic text-signal">hidden stories</em></>,
+                "inside data before",
+                "anyone else.",
               ]}
             />
           </h1>
@@ -61,7 +48,9 @@ export const Hero = () => {
           </div>
         </div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-12 grid grid-cols-3 border-y border-rule">
+        <TrustedBy />
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="grid grid-cols-3 border-b border-rule">
           {STATS.map(([n, l], i) => (
             <div key={l} className={`py-5 ${i ? "border-l border-rule pl-4 sm:pl-8" : ""}`} data-testid={`hero-stat-${i}`}>
               <div className="font-display text-3xl font-medium tracking-tight sm:text-5xl">{n}</div>
@@ -69,8 +58,6 @@ export const Hero = () => {
             </div>
           ))}
         </motion.div>
-
-        <TrustedBy />
 
         <div className="mt-8 flex items-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.2em] text-[#6B6B63]">
           <ArrowDown className="h-3.5 w-3.5 animate-bounce" /> Watch it answer — live

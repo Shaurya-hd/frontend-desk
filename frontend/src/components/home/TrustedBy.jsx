@@ -8,7 +8,7 @@ const LOGOS = [
 ];
 
 export const TrustedBy = () => (
-  <section className="border-b border-rule py-6" data-testid="trusted-by">
+  <section className="mt-12 border-y border-rule py-6" data-testid="trusted-by">
     <div className="grid items-center gap-6 lg:grid-cols-[240px_1fr]">
       <FadeUp>
         <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-[#6B6B63]">Trusted by users from</p>

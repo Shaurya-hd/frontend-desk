@@ -9,10 +9,11 @@ import { btnInk, btnLine, arrowCls } from "./Btn";
 import { EASE } from "./Reveal";
 
 const LINKS = [
+  ["home", "Home"],
   ["problem", "Problem"],
   ["features", "Features"],
-  ["compare", "How it is different from other tools"],
 ];
+const COMPARE = ["compare", "How Desk is different from other tools"];
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,10 @@ export const Nav = () => {
 
   const go = (id) => {
     setOpen(false);
-    if (pathname === "/") lenis?.scrollTo(`#${id}`, { offset: -80 });
+    if (id === "home") {
+      if (pathname === "/") lenis?.scrollTo(0);
+      else navigate("/");
+    } else if (pathname === "/") lenis?.scrollTo(`#${id}`, { offset: -80 });
     else navigate(`/#${id}`);
   };
 
@@ -38,11 +42,6 @@ export const Nav = () => {
       className="fixed inset-x-0 top-0 z-40"
       data-testid="site-nav"
     >
-      <button onClick={openWaitlist} data-testid="announcement-bar" className="flex h-8 w-full items-center justify-center gap-3 bg-ink font-mono text-[10.5px] uppercase tracking-[0.2em] text-paper/80 transition-colors hover:text-paper">
-        <span className="relative flex h-1.5 w-1.5"><span className="pulse-ring absolute inset-0 rounded-full bg-signal" /><span className="relative h-1.5 w-1.5 rounded-full bg-signal" /></span>
-        Private beta — now onboarding newsrooms
-        <ArrowUpRight className="h-3 w-3" />
-      </button>
       <div className={`transition-[background-color,border-color,backdrop-filter] duration-500 border-b ${scrolled || open ? "border-rule bg-paper/80 backdrop-blur-xl" : "border-transparent bg-transparent"}`}>
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 lg:px-10">
           <Logo />
@@ -51,6 +50,7 @@ export const Nav = () => {
               <button key={id} onClick={() => go(id)} className={linkCls} data-testid={`nav-link-${id}`}>{label}</button>
             ))}
             <Link to="/platform" className={`${linkCls} ${pathname === "/platform" ? "after:scale-x-100 text-ink" : ""}`} data-testid="nav-link-platform">Tools</Link>
+            <button onClick={() => go(COMPARE[0])} className={linkCls} data-testid="nav-link-compare">{COMPARE[1]}</button>
           </nav>
           <div className="flex items-center gap-2.5">
             <button onClick={openEnterprise} className={`${btnLine} hidden h-10 px-4 text-[13px] sm:inline-flex`} data-testid="nav-enterprise-sales-button">Contact enterprise sales</button>
@@ -78,6 +78,7 @@ export const Nav = () => {
                 <button key={id} onClick={() => go(id)} className="text-left font-display text-3xl" data-testid={`mobile-nav-link-${id}`}>{label}</button>
               ))}
               <Link to="/platform" onClick={() => setOpen(false)} className="font-display text-3xl" data-testid="mobile-nav-link-platform">Tools</Link>
+              <button onClick={() => go(COMPARE[0])} className="text-left font-display text-3xl" data-testid="mobile-nav-link-compare">{COMPARE[1]}</button>
               <button onClick={() => { setOpen(false); openEnterprise(); }} className={`${btnLine} mt-2`} data-testid="mobile-enterprise-sales-button">Contact enterprise sales</button>
             </div>
           </div>
