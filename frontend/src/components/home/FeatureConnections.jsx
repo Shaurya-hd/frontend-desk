@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Eyebrow, FadeUp, MaskLines } from "@/components/site/Reveal";
+import { FeatureTitle, FadeUp, MaskLines } from "@/components/site/Reveal";
 import { NODES, EDGES, THREAD, THREAD_NOTES, NODE_TYPES } from "@/data/connections";
 
 const byId = Object.fromEntries(NODES.map((n) => [n.id, n]));
@@ -58,13 +58,13 @@ export const FeatureConnections = () => {
       <div className="relative mx-auto max-w-[1440px] px-5 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <Eyebrow dark>03 — Connections</Eyebrow>
-            <h3 className="mt-6 font-display text-5xl font-medium leading-[0.98] tracking-[-0.03em] lg:text-[4.2rem]">
+            <FeatureTitle dark n="03" title="Connections" />
+            <h3 className="mt-8 font-display text-4xl font-medium leading-[1.02] tracking-[-0.025em] lg:text-[3.4rem]">
               <MaskLines inView lines={["Connect the dots.", <em key="e" className="italic text-[#9DB2FF]">Discover the bigger story.</em>]} />
             </h3>
           </div>
           <FadeUp delay={0.1} className="flex items-end lg:col-span-5">
-            <p className="max-w-md text-[16px] leading-relaxed text-white/60">Stories rarely exist in isolation. Chople links events, people, organisations, policies, data and history across your research — surfacing the triggering events and overlooked links that turn several stories into one narrative.</p>
+            <p className="max-w-md text-[17px] leading-relaxed text-white/70">Stories rarely stand alone. Chople links events, people, policies and data to show what connects them.</p>
           </FadeUp>
         </div>
 

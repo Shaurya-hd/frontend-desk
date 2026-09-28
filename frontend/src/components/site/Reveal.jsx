@@ -37,8 +37,15 @@ export const FadeUp = ({ children, delay = 0, className = "", y = 28, ...rest })
 );
 
 export const Eyebrow = ({ children, dark = false, className = "" }) => (
-  <div className={`flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] ${dark ? "text-white/55" : "text-[#4A4A4A]"} ${className}`}>
-    <span className={`h-px w-8 ${dark ? "bg-white/40" : "bg-ink"}`} />
+  <div className={`flex items-center gap-3 text-[16px] font-medium tracking-[-0.01em] lg:text-[17px] ${dark ? "text-paper/85" : "text-ink"} ${className}`}>
+    <span className="h-2.5 w-2.5 bg-signal" />
     {children}
+  </div>
+);
+
+export const FeatureTitle = ({ n, title, dark = false }) => (
+  <div className={`flex items-center gap-5 border-b pb-5 ${dark ? "border-white/20" : "border-ink"}`} data-testid={`feature-title-${n}`}>
+    <span className={`flex h-14 w-14 shrink-0 items-center justify-center font-display text-[28px] font-medium ${dark ? "bg-paper text-ink" : "bg-ink text-paper"}`}>{n}</span>
+    <span className={`text-[24px] font-semibold leading-tight tracking-[-0.02em] lg:text-[30px] ${dark ? "text-paper" : "text-ink"}`}>{title}</span>
   </div>
 );

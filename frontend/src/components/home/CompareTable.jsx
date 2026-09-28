@@ -29,9 +29,9 @@ export const CompareTable = () => (
     <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-8">
-          <Eyebrow>The difference</Eyebrow>
+          <Eyebrow>Chople vs other tools</Eyebrow>
           <h2 className="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-[5rem]">
-            <MaskLines inView lines={["Built for the newsroom.", <em key="e" className="italic text-[#6B6B63]">Not adapted for it.</em>]} />
+            <MaskLines inView lines={["How is Chople different", <em key="e" className="italic text-signal">from other tools?</em>]} />
           </h2>
         </div>
         <FadeUp delay={0.1} className="flex items-end lg:col-span-4">

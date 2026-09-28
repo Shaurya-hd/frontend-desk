@@ -1,5 +1,5 @@
 import { Table2, LineChart as LineIcon, GanttChart } from "lucide-react";
-import { Eyebrow, FadeUp, MaskLines } from "@/components/site/Reveal";
+import { FeatureTitle, FadeUp, MaskLines } from "@/components/site/Reveal";
 import { ChartStudio } from "@/components/charts/ChartStudio";
 
 const FORMATS = [
@@ -13,13 +13,13 @@ export const FeatureVisual = () => (
     <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <Eyebrow>02 — Visualisation & Anomaly Detection</Eyebrow>
-          <h3 className="mt-6 font-display text-5xl font-medium leading-[0.98] tracking-[-0.03em] lg:text-[4.2rem]">
+          <FeatureTitle n="02" title="Visualisation & Anomaly Detection" />
+          <h3 className="mt-8 font-display text-4xl font-medium leading-[1.02] tracking-[-0.025em] lg:text-[3.4rem]">
             <MaskLines inView lines={["Don't just give the answer.", <em key="e" className="italic text-signal">Show what matters.</em>]} />
           </h3>
         </div>
         <FadeUp delay={0.1} className="flex items-end lg:col-span-5">
-          <p className="max-w-md text-[16px] leading-relaxed text-[#3A3A3A]">Chople understands the nature of your question and picks the most useful format automatically. It also flags sudden spikes, crashes and conflicting values for the same metric across credible sources.</p>
+          <p className="max-w-md text-[17px] leading-relaxed text-[#3A3A3A]">Chople picks the clearest format for every answer — and points out anything unusual in the numbers.</p>
         </FadeUp>
       </div>
 
@@ -39,7 +39,7 @@ export const FeatureVisual = () => (
 
       <FadeUp delay={0.1} className="mt-8">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#4A4A4A]">Try it — switch views, change values, export the data</p>
+          <p className="text-[16px] font-medium">Try it: switch between line, bar and pie.</p>
           <p className="font-mono text-[10.5px] text-[#8A8A80]">Figures shown for demonstration</p>
         </div>
         <ChartStudio idPrefix="studio" />

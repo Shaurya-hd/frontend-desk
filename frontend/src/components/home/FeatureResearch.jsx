@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, AlertTriangle, X, FileText, ShieldCheck, Search, Loader2 } from "lucide-react";
-import { Eyebrow, FadeUp, MaskLines, EASE } from "@/components/site/Reveal";
+import { FeatureTitle, FadeUp, MaskLines, EASE } from "@/components/site/Reveal";
 
 const CLAIMS = [
   {
@@ -104,22 +104,22 @@ const Tracer = () => {
   );
 };
 
-const POINTS = ["Searches only pre-approved, credible sources", "Traces every claim back to its original document", "Cross-checks values across sources", "Surfaces the supporting evidence — and the contradictions"];
+const POINTS = ["Only trusted, official sources", "Every claim traced to its document", "Contradictions flagged instantly"];
 
 export const FeatureResearch = () => (
   <section id="f-research" className="mx-auto max-w-[1440px] px-5 py-24 lg:px-10 lg:py-32" data-testid="feature-research">
     <div className="grid gap-14 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <div className="lg:sticky lg:top-32">
-          <Eyebrow>01 — Deep Research & Verification</Eyebrow>
-          <h3 className="mt-6 font-display text-5xl font-medium leading-[0.98] tracking-[-0.03em] lg:text-[4.2rem]">
-            <MaskLines inView lines={["Research and verify", "any story from", <em key="e" className="italic">trusted sources.</em>]} />
+          <FeatureTitle n="01" title="Deep Research & Verification" />
+          <h3 className="mt-8 font-display text-4xl font-medium leading-[1.02] tracking-[-0.025em] lg:text-[3.4rem]">
+            <MaskLines inView lines={["Research and verify any story", <em key="e" className="italic text-signal">from trusted sources.</em>]} />
           </h3>
           <FadeUp delay={0.1}>
-            <p className="mt-8 max-w-md text-[16px] leading-relaxed text-[#3A3A3A]">Ask any research question. Chople searches pre-approved sources and massive volumes of official data to find the information, evidence and context — then traces each claim to where it came from.</p>
+            <p className="mt-6 max-w-md text-[17px] leading-relaxed text-[#3A3A3A]">Ask a question. Chople finds the evidence in official data and shows you exactly where each fact came from.</p>
             <ul className="mt-8 space-y-3 border-t border-rule pt-6">
               {POINTS.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-[14.5px]"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-signal" />{p}</li>
+                <li key={p} className="flex items-start gap-3 text-[16px]"><span className="mt-2 h-1.5 w-1.5 shrink-0 bg-signal" />{p}</li>
               ))}
             </ul>
             <div className="mt-10 flex items-center gap-4 bg-ink p-5 text-paper" data-testid="sourced-banner">
