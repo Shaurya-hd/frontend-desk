@@ -1,0 +1,28 @@
+{
+  "summary": "First-run testing of Chople's Desk marketing site. Backend: 12/12 pytest cases passed for /api/waitlist and /api/enterprise (create, duplicate handling, case-insensitive email, validation 422s, optional fields, enterprise organisation required). Frontend: Home page loads correctly, hero/masked-reveal renders, waitlist + enterprise dialogs submit successfully and show success states, inline CTA waitlist submits, claim tracer verdicts (Supported / Conflicting values / Not supported) render, ChartStudio all controls present (dataset/view/values/order/toggles/copy/export) and GDP+pie shows pie-warning + switch-line works, compare table has 11 rows with score 11/11, time counter animates to 10, connections graph + 7 thread-steps + 12 graph-nodes render, footer & CTA X/LinkedIn links have correct hrefs, versus queries switch panels, versus-table shows on compare view. Platform page: app-mock nav (research/trends/notes/sources) works, add note updates count badge and note appears in Notes view, delete works, trends selection updates app-trend-selected, app-trend-open-research switches back to research (via lenis scroll from TrendsShowcase or setView from AppMock — TrendsView is rendered twice on page which is intended), depth buttons + query send open waitlist dialog. NotesShowcase sentence toggling and copy work. Mobile (390px): nav-mobile-menu-button opens menu with all links, no horizontal overflow.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "TrendsView is rendered simultaneously by both AppMock (when view==trends) and standalone in TrendsShowcase — this leads to duplicate data-testids like app-trend-open-research (count=2 on /platform). Not a functional bug but complicates automated testing; consider suffixing testids in the standalone showcase (e.g., trends-showcase-trend-open-research) for clarity.",
+    "Review-request testid names for form fields did not match actual implementation (e.g., request said 'waitlist-dialog-name' but code exposes 'waitlist-dialog-name-input'; 'enterprise-dialog-*' fields are actually 'enterprise-*-input'; 'enterprise-dialog' testid is on DialogContent). Consider aligning naming or documenting.",
+    "hero-demo-format testid exists only during 'format' phase of hero demo cycle (not always in DOM). Consider always rendering the element (empty) or documenting.",
+    "Waitlist endpoint returns HTTP 200 for both new signup and duplicate email (differentiated via body 'status'). Consider 201 for created and 200/409 for exists for stricter REST semantics.",
+    "server.py uses deprecated @app.on_event('shutdown'); prefer FastAPI lifespan handler.",
+    "MongoDB waitlist collection has no unique index on email — race condition between find_one and insert_one could allow duplicate rows under concurrent load."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "seed_data_creation": "Test entries prefixed with TEST_ / test+*@example.com inserted into MongoDB waitlist and enterprise_leads collections via pytest and Playwright. Not cleaned up (marketing forms don't expose delete API).",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Backend tests live in /app/backend/tests/backend_test.py — run with `pytest /app/backend/tests/ -v`. Frontend testids: for LeadForms the pattern is `{prefix}-{name|email|org|role}-input` and `{prefix}-submit-button` (waitlist prefix in dialog is 'waitlist-dialog', in cta is 'cta-waitlist'; enterprise uses fixed prefix 'enterprise'). Dialogs identified by testid 'waitlist-dialog' / 'enterprise-dialog'. Time counter is 'time-counter' inside 'time-saved-section'. Two AppMock+TrendsView pairs are rendered on /platform (interactive AppMock at top and standalone TrendsShowcase further down) — use .first when targeting the interactive one."
+}

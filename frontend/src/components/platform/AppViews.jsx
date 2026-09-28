@@ -48,15 +48,15 @@ export const ResearchView = ({ onNote, notes }) => (
   </div>
 );
 
-export const TrendsView = ({ onOpen }) => {
+export const TrendsView = ({ onOpen, prefix = "app" }) => {
   const [sel, setSel] = useState(FEED[0]);
   return (
-    <div className="grid min-h-full lg:grid-cols-[1fr_1.1fr]" data-testid="app-trends-view">
+    <div className="grid min-h-full lg:grid-cols-[1fr_1.1fr]" data-testid={`${prefix}-trends-view`}>
       <div className="border-r border-rule p-5">
         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#6B6B63]">Your news feed · live</div>
         <div className="mt-3 space-y-2">
           {FEED.map((f) => (
-            <button key={f.id} onClick={() => setSel(f)} data-testid={`app-trend-${f.id}`} className={`w-full rounded-lg border p-4 text-left transition-colors ${sel.id === f.id ? "border-[#A5B4FC] bg-[#EEF2FF]" : "border-rule bg-white hover:border-[#A5B4FC]"}`}>
+            <button key={f.id} onClick={() => setSel(f)} data-testid={`${prefix}-trend-${f.id}`} className={`w-full rounded-lg border p-4 text-left transition-colors ${sel.id === f.id ? "border-[#A5B4FC] bg-[#EEF2FF]" : "border-rule bg-white hover:border-[#A5B4FC]"}`}>
               <div className="flex items-center justify-between font-mono text-[10px] text-[#6B6B63]"><span className="uppercase tracking-[0.14em]">{f.tag}</span><span>{f.meta}</span></div>
               <div className="mt-1.5 text-[14px] font-medium leading-snug">{f.h}</div>
               <div className="mt-2 flex items-center gap-1.5 text-[11.5px] text-[#4F46E5]"><Link2 className="h-3 w-3" /> {f.links.length} connections found</div>
@@ -66,7 +66,7 @@ export const TrendsView = ({ onOpen }) => {
       </div>
       <div className="p-5">
         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#6B6B63]">Connections</div>
-        <p className="mt-2 text-[16px] font-medium leading-snug" data-testid="app-trend-selected">{sel.h}</p>
+        <p className="mt-2 text-[16px] font-medium leading-snug" data-testid={`${prefix}-trend-selected`}>{sel.h}</p>
         <div className="relative mt-5 space-y-3 border-l border-[#A5B4FC] pl-5">
           {sel.links.map(([k, v], i) => (
             <motion.div key={sel.id + i} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.07 }} className="relative rounded-lg border border-rule bg-white p-3.5">
@@ -76,7 +76,7 @@ export const TrendsView = ({ onOpen }) => {
             </motion.div>
           ))}
         </div>
-        <button onClick={onOpen} className="mt-6 flex items-center gap-2 rounded-md bg-ink px-4 py-2.5 text-[13px] text-paper transition-transform active:scale-95" data-testid="app-trend-open-research">Open in Research Mode <ArrowRight className="h-3.5 w-3.5" /></button>
+        <button onClick={onOpen} className="mt-6 flex items-center gap-2 rounded-md bg-ink px-4 py-2.5 text-[13px] text-paper transition-transform active:scale-95" data-testid={`${prefix}-trend-open-research`}>Open in Research Mode <ArrowRight className="h-3.5 w-3.5" /></button>
       </div>
     </div>
   );

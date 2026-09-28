@@ -19,7 +19,7 @@ export const TrendsShowcase = () => {
           </FadeUp>
         </div>
         <FadeUp className="mt-14 overflow-hidden border border-ink bg-[#FAFAF8] shadow-[10px_10px_0_#0F0F0F]">
-          <TrendsView onOpen={() => lenis?.scrollTo("#app-mock-anchor", { offset: -100 })} />
+          <TrendsView prefix="showcase" onOpen={() => lenis?.scrollTo("#app-mock-anchor", { offset: -100 })} />
         </FadeUp>
       </div>
     </section>
